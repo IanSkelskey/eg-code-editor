@@ -1,0 +1,29 @@
+<div class="editor-container">
+  <header class="editor-header">
+    <h1>Code Editor</h1>
+    <div class="controls">
+      <label for="language-select">Language:</label>
+      <select id="language-select" [value]="selectedLanguage()" (change)="onLanguageChange($event)" class="language-select">
+        @for (language of availableLanguages(); track language.value) {
+          <option [value]="language.value">{{ language.label }}</option>
+        }
+      </select>
+    </div>
+  </header>
+  
+  <main class="editor-main">
+    <textarea 
+      class="code-editor"
+      [value]="codeContent()"
+      (input)="onCodeChange($event)"
+      [placeholder]="'Enter your ' + selectedLanguage() + ' code here...'"
+      spellcheck="false"
+      autocomplete="off"
+      autocorrect="off"
+      autocapitalize="off"
+    ></textarea>
+  </main>
+</div>
+
+
+<router-outlet />
