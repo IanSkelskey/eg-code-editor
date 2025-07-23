@@ -1,10 +1,10 @@
-import { Component, input, output, effect, signal, ElementRef, ViewChild } from '@angular/core';
+import { Component, input, output, effect, signal, ElementRef, ViewChild, HostBinding } from '@angular/core';
 import { SyntaxHighlightingService, HighlightedCode } from '../../services/syntax-highlighting.service';
 
 @Component({
   selector: 'app-code-editor',
   template: `
-    <div class="code-editor-container">
+    <div class="code-editor-container" [attr.data-language]="language()">
       <!-- Code input (invisible textarea) -->
       <textarea
         #codeTextarea
@@ -39,6 +39,11 @@ import { SyntaxHighlightingService, HighlightedCode } from '../../services/synta
   styleUrls: ['./code-editor.component.css']
 })
 export class CodeEditorComponent {
+  // Host binding to support class-based dark mode
+  @HostBinding('class.dark-theme') get isDarkTheme() {
+    return window.matchMedia('(prefers-color-scheme: dark)').matches;
+  }
+
   // Inputs
   code = input<string>('');
   language = input<string>('javascript');

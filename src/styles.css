@@ -1,5 +1,7 @@
 /* Global styles for Code Editor */
-@import 'highlight.js/styles/github.css';
+/* Import appropriate highlight.js themes based on color scheme */
+@import 'highlight.js/styles/github.css' screen and (prefers-color-scheme: light);
+@import 'highlight.js/styles/github-dark.css' screen and (prefers-color-scheme: dark);
 
 * {
   box-sizing: border-box;
@@ -21,6 +23,43 @@ textarea {
   resize: none;
 }
 
+/* Add a CSS variable approach for theme colors */
+:root {
+  --code-bg: #ffffff;
+  --code-fg: #1e293b;
+  --code-border: #e2e8f0;
+  --line-numbers-bg: #f8fafc;
+  --line-numbers-fg: #64748b;
+  --scrollbar-track: #f1f1f1;
+  --scrollbar-thumb: #c1c1c1;
+  --scrollbar-thumb-hover: #a8a8a8;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --code-bg: #1e293b;
+    --code-fg: #f8fafc;
+    --code-border: #334155;
+    --line-numbers-bg: #0f172a;
+    --line-numbers-fg: #94a3b8;
+    --scrollbar-track: #2d3748;
+    --scrollbar-thumb: #4a5568;
+    --scrollbar-thumb-hover: #718096;
+  }
+}
+
+/* Add a .dark-theme class that can be applied programmatically if needed */
+.dark-theme {
+  --code-bg: #1e293b;
+  --code-fg: #f8fafc;
+  --code-border: #334155;
+  --line-numbers-bg: #0f172a;
+  --line-numbers-fg: #94a3b8;
+  --scrollbar-track: #2d3748;
+  --scrollbar-thumb: #4a5568;
+  --scrollbar-thumb-hover: #718096;
+}
+
 /* Scrollbar styling for webkit browsers */
 ::-webkit-scrollbar {
   width: 8px;
@@ -28,30 +67,15 @@ textarea {
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: var(--scrollbar-track);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #c1c1c1;
+  background: var(--scrollbar-thumb);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #a8a8a8;
-}
-
-/* Dark mode scrollbar */
-@media (prefers-color-scheme: dark) {
-  ::-webkit-scrollbar-track {
-    background: #2d3748;
-  }
-  
-  ::-webkit-scrollbar-thumb {
-    background: #4a5568;
-  }
-  
-  ::-webkit-scrollbar-thumb:hover {
-    background: #718096;
-  }
+  background: var(--scrollbar-thumb-hover);
 }
