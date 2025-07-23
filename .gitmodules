@@ -1,0 +1,3 @@
+[submodule "vendor/tt2-highlight"]
+	path = vendor/tt2-highlight
+	url = git@github.com:IanSkelskey/tt2-highlight.js.git
