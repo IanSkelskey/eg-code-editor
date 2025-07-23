@@ -1,5 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { CodeEditorComponent } from './components/code-editor/code-editor.component';
 
 interface Language {
   value: string;
@@ -8,7 +9,7 @@ interface Language {
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, CodeEditorComponent],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
@@ -46,8 +47,7 @@ export class App {
     this.selectedLanguage.set(target.value);
   }
   
-  protected onCodeChange(event: Event): void {
-    const target = event.target as HTMLTextAreaElement;
-    this.codeContent.set(target.value);
+  protected onCodeChange(newCode: string): void {
+    this.codeContent.set(newCode);
   }
 }

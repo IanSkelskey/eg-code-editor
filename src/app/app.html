@@ -12,16 +12,12 @@
   </header>
   
   <main class="editor-main">
-    <textarea 
-      class="code-editor"
-      [value]="codeContent()"
-      (input)="onCodeChange($event)"
+    <app-code-editor 
+      [code]="codeContent()"
+      [language]="selectedLanguage()"
       [placeholder]="'Enter your ' + selectedLanguage() + ' code here...'"
-      spellcheck="false"
-      autocomplete="off"
-      autocorrect="off"
-      autocapitalize="off"
-    ></textarea>
+      (codeChange)="onCodeChange($event)"
+    ></app-code-editor>
   </main>
 </div>
 

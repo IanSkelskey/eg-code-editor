@@ -82,37 +82,13 @@
 .editor-main {
   flex: 1;
   display: flex;
-  background: var(--surface-color);
   border-radius: 0.5rem;
-  box-shadow: var(--shadow-md);
-  border: 1px solid var(--border-color);
   overflow: hidden;
 }
 
-.code-editor {
+app-code-editor {
   flex: 1;
-  border: none;
-  outline: none;
-  padding: 1.5rem;
-  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
-  font-size: 14px;
-  line-height: 1.5;
-  background: var(--surface-color);
-  color: var(--text-color);
-  resize: none;
-  tab-size: 2;
-  white-space: pre;
-  overflow-wrap: normal;
-  overflow-x: auto;
-}
-
-.code-editor::placeholder {
-  color: var(--text-secondary);
-  font-style: italic;
-}
-
-.code-editor:focus {
-  background: #fefefe;
+  display: block;
 }
 
 /* Responsive design */

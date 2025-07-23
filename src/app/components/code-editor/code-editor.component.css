@@ -1,0 +1,263 @@
+.code-editor-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+  font-size: 14px;
+  line-height: 1.5;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.code-input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 1rem 1rem 1rem 4rem;
+  margin: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: transparent;
+  caret-color: #1e293b;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  resize: none;
+  z-index: 2;
+  white-space: pre;
+  word-wrap: normal;
+  overflow-wrap: normal;
+}
+
+.code-display {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 1rem 1rem 1rem 4rem;
+  margin: 0;
+  background: transparent;
+  color: #1e293b;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+  white-space: pre;
+  word-wrap: normal;
+  overflow-wrap: normal;
+}
+
+.line-numbers {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3.5rem;
+  height: 100%;
+  padding: 1rem 0.5rem;
+  background: #f8fafc;
+  border-right: 1px solid #e2e8f0;
+  color: #64748b;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  text-align: right;
+  z-index: 3;
+  overflow: hidden;
+  user-select: none;
+}
+
+.line-number {
+  display: block;
+  min-height: 1.5em;
+}
+
+/* Highlight.js theme customization */
+.code-display .hljs {
+  background: transparent !important;
+  color: inherit;
+}
+
+/* Token colors */
+.code-display .hljs-keyword {
+  color: #7c3aed;
+  font-weight: 600;
+}
+
+.code-display .hljs-string {
+  color: #059669;
+}
+
+.code-display .hljs-number {
+  color: #dc2626;
+}
+
+.code-display .hljs-comment {
+  color: #6b7280;
+  font-style: italic;
+}
+
+.code-display .hljs-function {
+  color: #2563eb;
+}
+
+.code-display .hljs-variable {
+  color: #1f2937;
+}
+
+.code-display .hljs-type {
+  color: #7c2d12;
+  font-weight: 600;
+}
+
+.code-display .hljs-attr {
+  color: #dc2626;
+}
+
+.code-display .hljs-tag {
+  color: #7c3aed;
+}
+
+.code-display .hljs-built_in {
+  color: #0891b2;
+}
+
+.code-display .hljs-literal {
+  color: #dc2626;
+}
+
+.code-display .hljs-symbol {
+  color: #059669;
+}
+
+.code-display .hljs-punctuation {
+  color: #374151;
+}
+
+/* Scrollbar styling */
+.code-input::-webkit-scrollbar,
+.code-display::-webkit-scrollbar,
+.line-numbers::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.code-input::-webkit-scrollbar-track,
+.code-display::-webkit-scrollbar-track,
+.line-numbers::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+.code-input::-webkit-scrollbar-thumb,
+.code-display::-webkit-scrollbar-thumb,
+.line-numbers::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+.code-input::-webkit-scrollbar-thumb:hover,
+.code-display::-webkit-scrollbar-thumb:hover,
+.line-numbers::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .code-editor-container {
+    background: #1e293b;
+    border-color: #334155;
+  }
+  
+  .code-input {
+    caret-color: #f1f5f9;
+  }
+  
+  .code-display {
+    color: #f1f5f9;
+  }
+  
+  .line-numbers {
+    background: #0f172a;
+    border-color: #334155;
+    color: #94a3b8;
+  }
+  
+  /* Dark mode token colors */
+  .code-display .hljs-keyword {
+    color: #a855f7;
+  }
+  
+  .code-display .hljs-string {
+    color: #10b981;
+  }
+  
+  .code-display .hljs-number {
+    color: #f87171;
+  }
+  
+  .code-display .hljs-comment {
+    color: #9ca3af;
+  }
+  
+  .code-display .hljs-function {
+    color: #60a5fa;
+  }
+  
+  .code-display .hljs-variable {
+    color: #e5e7eb;
+  }
+  
+  .code-display .hljs-type {
+    color: #fbbf24;
+  }
+  
+  .code-display .hljs-attr {
+    color: #f87171;
+  }
+  
+  .code-display .hljs-tag {
+    color: #a855f7;
+  }
+  
+  .code-display .hljs-built_in {
+    color: #06b6d4;
+  }
+  
+  .code-display .hljs-literal {
+    color: #f87171;
+  }
+  
+  .code-display .hljs-symbol {
+    color: #10b981;
+  }
+  
+  .code-display .hljs-punctuation {
+    color: #d1d5db;
+  }
+  
+  /* Dark mode scrollbars */
+  .code-input::-webkit-scrollbar-track,
+  .code-display::-webkit-scrollbar-track,
+  .line-numbers::-webkit-scrollbar-track {
+    background: #374151;
+  }
+  
+  .code-input::-webkit-scrollbar-thumb,
+  .code-display::-webkit-scrollbar-thumb,
+  .line-numbers::-webkit-scrollbar-thumb {
+    background: #6b7280;
+  }
+  
+  .code-input::-webkit-scrollbar-thumb:hover,
+  .code-display::-webkit-scrollbar-thumb:hover,
+  .line-numbers::-webkit-scrollbar-thumb:hover {
+    background: #9ca3af;
+  }
+}

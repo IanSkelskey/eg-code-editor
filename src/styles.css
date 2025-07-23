@@ -1,4 +1,6 @@
 /* Global styles for Code Editor */
+@import 'highlight.js/styles/github.css';
+
 * {
   box-sizing: border-box;
 }
