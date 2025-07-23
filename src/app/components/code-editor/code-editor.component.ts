@@ -4,7 +4,7 @@ import { SyntaxHighlightingService, HighlightedCode } from '../../services/synta
 @Component({
   selector: 'app-code-editor',
   template: `
-    <div class="code-editor-container" [attr.data-language]="language()">
+    <div class="code-editor-container" [attr.data-language]="language()" [class.no-line-numbers]="!showLineNumbers()">
       <!-- Code input (invisible textarea) -->
       <textarea
         #codeTextarea
@@ -29,11 +29,13 @@ import { SyntaxHighlightingService, HighlightedCode } from '../../services/synta
       ></pre>
       
       <!-- Line numbers -->
-      <div class="line-numbers">
-        @for (lineNum of lineNumbers(); track lineNum) {
-          <span class="line-number">{{ lineNum }}</span>
-        }
-      </div>
+      @if (showLineNumbers()) {
+        <div class="line-numbers">
+          @for (lineNum of lineNumbers(); track lineNum) {
+            <span class="line-number">{{ lineNum }}</span>
+          }
+        </div>
+      }
     </div>
   `,
   styleUrls: ['./code-editor.component.css']
@@ -48,6 +50,7 @@ export class CodeEditorComponent {
   code = input<string>('');
   language = input<string>('javascript');
   placeholder = input<string>('Enter your code here...');
+  showLineNumbers = input<boolean>(true);
   
   // Outputs
   codeChange = output<string>();
@@ -83,7 +86,7 @@ export class CodeEditorComponent {
       display.scrollLeft = textarea.scrollLeft;
     }
     
-    if (lineNumbers) {
+    if (lineNumbers && this.showLineNumbers()) {
       lineNumbers.scrollTop = textarea.scrollTop;
     }
   }

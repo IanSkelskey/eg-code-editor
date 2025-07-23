@@ -47,13 +47,28 @@
 .controls {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 1rem;
 }
 
 .controls label {
   font-weight: 500;
   color: var(--text-secondary);
   font-size: 0.875rem;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.line-numbers-checkbox {
+  width: 1rem;
+  height: 1rem;
+  accent-color: var(--primary-color);
+  cursor: pointer;
 }
 
 .language-select {
@@ -107,6 +122,8 @@ app-code-editor {
   
   .controls {
     justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
   }
   
   .code-editor {

@@ -8,6 +8,17 @@
           <option [value]="language.value">{{ language.label }}</option>
         }
       </select>
+      
+      <label for="line-numbers-toggle" class="checkbox-label">
+        <input 
+          id="line-numbers-toggle" 
+          type="checkbox" 
+          [checked]="showLineNumbers()" 
+          (change)="onToggleLineNumbers($event)"
+          class="line-numbers-checkbox"
+        >
+        Show line numbers
+      </label>
     </div>
   </header>
   
@@ -16,6 +27,7 @@
       [code]="codeContent()"
       [language]="selectedLanguage()"
       [placeholder]="'Enter your ' + selectedLanguage() + ' code here...'"
+      [showLineNumbers]="showLineNumbers()"
       (codeChange)="onCodeChange($event)"
     ></app-code-editor>
   </main>

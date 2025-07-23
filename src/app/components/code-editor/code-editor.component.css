@@ -55,6 +55,12 @@
   overflow-wrap: normal;
 }
 
+/* Adjust padding when line numbers are hidden */
+.code-editor-container.no-line-numbers .code-input,
+.code-editor-container.no-line-numbers .code-display {
+  padding-left: 1rem;
+}
+
 .line-numbers {
   position: absolute;
   top: 0;

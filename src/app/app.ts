@@ -43,6 +43,9 @@ export class App {
   // Code content
   protected readonly codeContent = signal<string>('');
   
+  // Line numbers setting
+  protected readonly showLineNumbers = signal<boolean>(true);
+  
   // Event handlers
   protected onLanguageChange(event: Event): void {
     const target = event.target as HTMLSelectElement;
@@ -51,5 +54,10 @@ export class App {
   
   protected onCodeChange(newCode: string): void {
     this.codeContent.set(newCode);
+  }
+  
+  protected onToggleLineNumbers(event: Event): void {
+    const target = event.target as HTMLInputElement;
+    this.showLineNumbers.set(target.checked);
   }
 }
