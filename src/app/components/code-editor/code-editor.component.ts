@@ -1,4 +1,4 @@
-import { Component, input, output, effect, signal, ElementRef, ViewChild, HostBinding } from '@angular/core';
+import { Component, input, output, effect, signal, ElementRef, ViewChild, HostBinding, OnDestroy } from '@angular/core';
 import { SyntaxHighlightingService, HighlightedCode } from '../../services/syntax-highlighting.service';
 
 @Component({
@@ -40,10 +40,13 @@ import { SyntaxHighlightingService, HighlightedCode } from '../../services/synta
   `,
   styleUrls: ['./code-editor.component.css']
 })
-export class CodeEditorComponent {
-  // Host binding to support class-based dark mode
-  @HostBinding('class.dark-theme') get isDarkTheme() {
-    return window.matchMedia('(prefers-color-scheme: dark)').matches;
+export class CodeEditorComponent implements OnDestroy {
+  // Reactive dark theme detection
+  private readonly darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+  protected readonly isDarkTheme = signal<boolean>(this.darkModeMediaQuery.matches);
+  
+  @HostBinding('class.dark-theme') get darkThemeClass() {
+    return this.isDarkTheme();
   }
 
   // Inputs
@@ -63,12 +66,24 @@ export class CodeEditorComponent {
   protected readonly lineNumbers = signal<number[]>([1]);
   
   constructor(private syntaxHighlightingService: SyntaxHighlightingService) {
+    // Listen for theme changes
+    this.darkModeMediaQuery.addEventListener('change', this.onThemeChange.bind(this));
+    
     // Update highlighting when code or language changes
     effect(() => {
       this.updateHighlighting();
       this.updateLineNumbers();
     });
   }
+  
+  ngOnDestroy(): void {
+    // Clean up media query listener
+    this.darkModeMediaQuery.removeEventListener('change', this.onThemeChange.bind(this));
+  }
+  
+  private onThemeChange = (event: MediaQueryListEvent): void => {
+    this.isDarkTheme.set(event.matches);
+  };
   
   protected onCodeChange(event: Event): void {
     const target = event.target as HTMLTextAreaElement;
