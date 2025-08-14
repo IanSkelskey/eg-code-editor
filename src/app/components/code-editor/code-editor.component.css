@@ -8,6 +8,11 @@
   --scrollbar-track: var(--bs-body-bg-alt);
   --scrollbar-thumb: var(--bs-gray-500);
   --scrollbar-thumb-hover: var(--bs-gray-600);
+  /* make the component fill its parent flex area */
+  display: block;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
 }
 
 /* Container for the code editor */
@@ -28,6 +33,8 @@
   display: flex;
   flex: 1;
   overflow: hidden;
+  /* allow children to scroll inside */
+  min-height: 0;
 }
 
 /* Status bar */
@@ -183,6 +190,8 @@
   flex: 1;
   overflow: hidden;
   height: 100%;
+  /* allow absolutely-positioned children to scroll */
+  min-height: 0;
 }
 
 /* Shared styles for code elements */
