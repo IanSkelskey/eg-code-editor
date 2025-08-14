@@ -88,8 +88,9 @@
 .editor-main {
   flex: 1;
   display: flex;
-  border-radius: 0.5rem;
-  overflow: hidden;
+  /* remove parent rounding/clipping to avoid cutting off the child editor corners */
+  border-radius: 0;
+  overflow: visible;
   min-height: 0;
 }
 
