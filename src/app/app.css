@@ -13,7 +13,7 @@
 .editor-container {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 100%; /* inherit dynamic viewport height from :host instead of fixed 100vh */
   max-width: 1200px;
   margin: 0 auto;
   padding: 1rem;
@@ -115,7 +115,8 @@ eg-code-editor {
     max-width: none;
     margin: 0;
     padding: 0;
-    gap: 0.5rem;
+    gap: 0; /* keep sections flush */
+    /* Removed bottom safe-area padding; footer handles it to avoid a gap */
   }
 
   .editor-header {
@@ -126,12 +127,23 @@ eg-code-editor {
     border-top-left-radius: 0;
     border-top-right-radius: 0;
     padding: 1rem;
+    flex-direction: column;     /* stack title and controls */
+    align-items: stretch;       /* make rows full width */
+    gap: 0.75rem;               /* space between rows */
+  }
+
+  .editor-header h1 {
+    text-align: center;
+    width: 100%;
+    margin: 0;                 /* keep compact */
+    font-size: 1.25rem;        /* slightly smaller on mobile */
   }
 
   .controls {
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 0.75rem;
+    width: 100%;
+    justify-content: center;   /* center controls row */
+    flex-wrap: wrap;           /* ...existing code... */
+    gap: 0.75rem;              /* ...existing code... */
   }
 
   .code-editor {
