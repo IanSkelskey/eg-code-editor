@@ -40,8 +40,13 @@ jobs:
         run: |
           npm run build -- --configuration=production --output-path=dist/gh-pages --base-href "/${{ github.event.repository.name }}/"
 
-      - name: Add SPA fallback (404.html)
-        run: cp dist/gh-pages/index.html dist/gh-pages/404.html
+      - name: Add SPA fallback (404.html) if present
+        run: |
+          if [ -f dist/gh-pages/index.html ]; then
+            cp dist/gh-pages/index.html dist/gh-pages/404.html
+          else
+            echo "index.html not found; skipping SPA fallback."
+          fi
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
