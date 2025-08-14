@@ -17,7 +17,7 @@ interface Language {
   styleUrl: './app.css'
 })
 export class App {
-  protected readonly title = signal('ng-code-editor');
+  protected readonly title = signal('Evergreen Code Editor');
   
   // Available programming languages
   protected readonly availableLanguages = signal<Language[]>([
