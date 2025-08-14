@@ -2,6 +2,7 @@
 
 /* Add styles-colors import so we can reuse its variables */
 @import './styles-colors.css';
+@import './assets/highlight-theme.css';
 
 * {
   box-sizing: border-box;

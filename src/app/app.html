@@ -33,5 +33,11 @@
   </main>
 </div>
 
+<!-- Floating Help Button -->
+<eg-fab-help-button (clicked)="openInfo()"></eg-fab-help-button>
+
+<!-- Information Modal -->
+<eg-info-modal [open]="showInfo()" (closed)="closeInfo()"></eg-info-modal>
+
 
 <router-outlet />

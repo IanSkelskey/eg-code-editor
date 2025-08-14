@@ -1,0 +1,38 @@
+.fab-help {
+  position: fixed;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  z-index: 1000;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--bs-card-bg);
+  color: var(--evergreen);
+  box-shadow: var(--shadow-md);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 120ms ease, box-shadow 120ms ease, background-color 120ms ease;
+}
+
+.fab-help:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-lg);
+}
+
+.fab-help:active {
+  transform: translateY(0);
+  box-shadow: var(--shadow-sm);
+}
+
+.fab-help:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(var(--primary-focus-outline-rgb), 0.2);
+}
+
+.fab-help .material-icons {
+  font-size: 28px;
+  line-height: 1;
+}
