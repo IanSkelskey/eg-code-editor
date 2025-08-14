@@ -23,13 +23,13 @@
   </header>
   
   <main class="editor-main">
-    <app-code-editor 
+    <eg-code-editor 
       [code]="codeContent()"
       [language]="selectedLanguage()"
       [placeholder]="'Enter your ' + selectedLanguage() + ' code here...'"
       [showLineNumbers]="showLineNumbers()"
       (codeChange)="onCodeChange($event)"
-    ></app-code-editor>
+    ></eg-code-editor>
   </main>
 </div>
 

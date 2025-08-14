@@ -1,4 +1,8 @@
 /* Global styles for Code Editor */
+
+/* Add styles-colors import so we can reuse its variables */
+@import './styles-colors.css';
+
 /* Import appropriate highlight.js themes based on color scheme */
 @import 'highlight.js/styles/github.css' screen and (prefers-color-scheme: light);
 @import 'highlight.js/styles/github-dark.css' screen and (prefers-color-scheme: dark);
@@ -23,41 +27,41 @@ textarea {
   resize: none;
 }
 
-/* Add a CSS variable approach for theme colors */
+/* Remap editor CSS variables to styles-colors tokens */
 :root {
-  --code-bg: #ffffff;
-  --code-fg: #1e293b;
-  --code-border: #e2e8f0;
-  --line-numbers-bg: #f8fafc;
-  --line-numbers-fg: #64748b;
-  --scrollbar-track: #f1f1f1;
-  --scrollbar-thumb: #c1c1c1;
-  --scrollbar-thumb-hover: #a8a8a8;
+  --code-bg: var(--bs-body-bg);
+  --code-fg: var(--bs-body-color);
+  --code-border: var(--border);
+  --line-numbers-bg: var(--bs-body-bg-alt);
+  --line-numbers-fg: var(--inactive);
+  --scrollbar-track: var(--bs-body-bg-alt);
+  --scrollbar-thumb: var(--border);
+  --scrollbar-thumb-hover: var(--border-thick);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --code-bg: #1e293b;
-    --code-fg: #f8fafc;
-    --code-border: #334155;
-    --line-numbers-bg: #0f172a;
-    --line-numbers-fg: #94a3b8;
-    --scrollbar-track: #2d3748;
-    --scrollbar-thumb: #4a5568;
-    --scrollbar-thumb-hover: #718096;
+    --code-bg: var(--bs-body-bg);
+    --code-fg: var(--bs-body-color);
+    --code-border: var(--border);
+    --line-numbers-bg: var(--bs-body-bg-alt);
+    --line-numbers-fg: var(--inactive);
+    --scrollbar-track: var(--bs-body-bg-alt);
+    --scrollbar-thumb: var(--border);
+    --scrollbar-thumb-hover: var(--border-thick);
   }
 }
 
 /* Add a .dark-theme class that can be applied programmatically if needed */
 .dark-theme {
-  --code-bg: #1e293b;
-  --code-fg: #f8fafc;
-  --code-border: #334155;
-  --line-numbers-bg: #0f172a;
-  --line-numbers-fg: #94a3b8;
-  --scrollbar-track: #2d3748;
-  --scrollbar-thumb: #4a5568;
-  --scrollbar-thumb-hover: #718096;
+  --code-bg: var(--bs-body-bg);
+  --code-fg: var(--bs-body-color);
+  --code-border: var(--border);
+  --line-numbers-bg: var(--bs-body-bg-alt);
+  --line-numbers-fg: var(--inactive);
+  --scrollbar-track: var(--bs-body-bg-alt);
+  --scrollbar-thumb: var(--border);
+  --scrollbar-thumb-hover: var(--border-thick);
 }
 
 /* Scrollbar styling for webkit browsers */

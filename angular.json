@@ -22,7 +22,9 @@
               }
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "src/styles-colors.css",
+              "src/assets/highlight-theme.css"
             ]
           },
           "configurations": {
@@ -75,7 +77,9 @@
               }
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "src/styles-colors.css",
+              "src/assets/highlight-theme.css"
             ]
           }
         }
