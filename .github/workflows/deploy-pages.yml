@@ -42,8 +42,8 @@ jobs:
 
       - name: Add SPA fallback (404.html) if present
         run: |
-          if [ -f dist/gh-pages/index.html ]; then
-            cp dist/gh-pages/index.html dist/gh-pages/404.html
+          if [ -f dist/gh-pages/browser/index.html ]; then
+            cp dist/gh-pages/browser/index.html dist/gh-pages/browser/404.html
           else
             echo "index.html not found; skipping SPA fallback."
           fi
@@ -51,7 +51,7 @@ jobs:
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist/gh-pages
+          path: dist/gh-pages/browser
 
   deploy:
     environment:
