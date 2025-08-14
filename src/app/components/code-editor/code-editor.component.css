@@ -314,3 +314,10 @@
   white-space: nowrap;
   border-width: 0;
 }
+
+@media (max-width: 768px) {
+  .code-editor-container {
+    border-left: none;
+    border-right: none;
+  }
+}

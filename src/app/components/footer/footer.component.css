@@ -31,3 +31,12 @@
 .heart {
   color: var(--danger);
 }
+
+@media (max-width: 768px) {
+  .app-footer {
+    border-left: none;
+    border-right: none;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+}
