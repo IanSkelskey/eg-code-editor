@@ -27,10 +27,13 @@
       [code]="codeContent()"
       [language]="selectedLanguage()"
       [placeholder]="'Enter your ' + selectedLanguage() + ' code here...'"
+
       [showLineNumbers]="showLineNumbers()"
       (codeChange)="onCodeChange($event)"
     ></eg-code-editor>
   </main>
+
+  <eg-footer></eg-footer>
 </div>
 
 <!-- Floating Help Button -->

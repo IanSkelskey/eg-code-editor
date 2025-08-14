@@ -20,8 +20,10 @@
   position: relative;
   width: 100%;
   height: 100%;
-  border-radius: 0.25rem;
-  border: 1px solid var(--code-border);
+  border-radius: 0;                  /* no rounding at connection points */
+  border: none;                      /* remove full border */
+  border-left: 1px solid var(--border);
+  border-right: 1px solid var(--border);
   overflow: hidden;
   background: var(--code-bg);
   display: flex;

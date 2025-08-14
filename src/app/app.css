@@ -14,25 +14,29 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 1rem;
-  gap: 1rem;
+  gap: 0; /* flush sections: header, editor, footer */
 }
 
 .editor-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: var(--bs-card-bg);
+  background: linear-gradient(180deg, var(--staff-navbar-a), var(--staff-navbar-b));
   padding: 1rem 1.5rem;
-  border-radius: 0.5rem;
-  box-shadow: var(--shadow-sm);
   border: 1px solid var(--border);
+  border-bottom: none;              /* no border where it meets the editor */
+  border-top-left-radius: 0.5rem;   /* round only outer top corners */
+  border-top-right-radius: 0.5rem;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  box-shadow: none;                 /* avoid layered shadows between sections */
 }
 
 .editor-header h1 {
   margin: 0;
   font-size: 1.5rem;
   font-weight: 600;
-  color: var(--evergreen);
+  color: var(--modal-header-color); /* high contrast on brand background */
 }
 
 .controls {
@@ -43,7 +47,7 @@
 
 .controls label {
   font-weight: 500;
-  color: var(--bs-text-highlight);
+  color: var(--modal-header-color);
   font-size: 0.875rem;
 }
 

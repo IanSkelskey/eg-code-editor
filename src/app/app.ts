@@ -3,6 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { CodeEditorComponent } from './components/code-editor/code-editor.component';
 import { FabHelpButtonComponent } from './components/fab-help-button/fab-help-button.component';
 import { InfoModalComponent } from './components/info-modal/info-modal.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 interface Language {
   value: string;
@@ -11,7 +12,7 @@ interface Language {
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, CodeEditorComponent, FabHelpButtonComponent, InfoModalComponent],
+  imports: [RouterOutlet, CodeEditorComponent, FabHelpButtonComponent, InfoModalComponent, FooterComponent],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

@@ -1,0 +1,33 @@
+:host {
+  display: block;
+}
+
+.app-footer {
+  background: linear-gradient(180deg, var(--staff-navbar-b), var(--staff-navbar-a));
+  color: var(--modal-header-color);
+  border: 1px solid var(--border);
+  border-top: none;                  /* no border where it meets the editor */
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 0.5rem; /* round only outer bottom corners */
+  border-bottom-right-radius: 0.5rem;
+  box-shadow: none;                  /* avoid layered shadows between sections */
+  padding: 0.75rem 1rem;
+  text-align: center;
+  font-size: 0.875rem;
+}
+
+.app-footer a {
+  color: inherit; /* maintain contrast on brand background */
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.app-footer a:hover,
+.app-footer a:focus {
+  text-decoration: underline;
+}
+
+.heart {
+  color: var(--danger);
+}
