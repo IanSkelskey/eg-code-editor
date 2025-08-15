@@ -34,6 +34,13 @@
   color: var(--evergreen);
 }
 
+.modal-header h2 .app-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 0.5rem;
+  vertical-align: -4px; /* nudges icon to align with text baseline */
+}
+
 .close {
   display: inline-flex;
   align-items: center;
