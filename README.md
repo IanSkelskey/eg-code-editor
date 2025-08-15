@@ -19,7 +19,6 @@ A lightweight Angular 20 app showcasing a custom code editor with live syntax hi
 - `src/app/components/code-editor/` – standalone editor component (template, styles, behavior)
 - `src/app/services/syntax-highlighting.service.ts` – highlight.js integration and language wiring
 - `src/app/services/language-grammars.ts` – language configuration, including TT2
-- `vendor/tt2-highlight/` – vendored assets used by the TT2 highlighter
 
 ## Supported languages (core)
 
