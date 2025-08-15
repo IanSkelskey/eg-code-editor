@@ -38,6 +38,7 @@
     border-right: none;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
+    border-bottom: none; /* remove 1px line at the very bottom on mobile */
     /* Add safe-area padding so footer is fully visible on real devices */
     padding-bottom: calc(0.75rem + env(safe-area-inset-bottom, 0));
   }

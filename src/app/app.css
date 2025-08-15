@@ -130,6 +130,7 @@ eg-code-editor {
     flex-direction: column;     /* stack title and controls */
     align-items: stretch;       /* make rows full width */
     gap: 0.75rem;               /* space between rows */
+    border-top: none; /* remove 1px line at the very top on mobile */
   }
 
   .editor-header h1 {
