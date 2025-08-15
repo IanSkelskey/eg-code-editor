@@ -1,6 +1,7 @@
 <img src="public/favicon.svg" alt="Evergreen Code Editor" width="32" height="32">
 
 # Evergreen Code Editor
+[![Demo](https://img.shields.io/badge/Demo-View%20Live-2ea44f)](https://ianskelskey.github.io/eg-code-editor/)
 
 A lightweight Angular 20 app showcasing a custom code editor with live syntax highlighting, line numbers, and basic editing helpers. Designed for integration into Evergreen ILS.
 
