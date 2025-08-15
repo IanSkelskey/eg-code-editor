@@ -5,6 +5,9 @@
 
 A lightweight Angular 20 app showcasing a custom code editor with live syntax highlighting, line numbers, and basic editing helpers. Designed for integration into Evergreen ILS.
 
+## Screenshot
+![Editor screenshot (TypeScript)](public/screenshot_ts.png)
+
 ## Highlights
 
 - Live syntax highlighting via highlight.js
